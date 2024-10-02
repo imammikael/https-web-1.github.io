@@ -1,0 +1,364 @@
+/* Reset básico - início */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(51, 51, 51);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Reset básico - fim */
+
+/* Para navegadores baseados em WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* Cor do fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas do "polegar" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do "polegar" ao passar o mouse */
+}
+
+/* Botão de voltar ao topo do site - início */
+#scrollTopBtn {
+    position: fixed; /* Fixa a imagem na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    width: 50px; /* Largura da imagem */
+    height: 50px; /* Altura da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    z-index: 1000; /* Garante que a imagem fique acima de outros elementos */
+    display: none; /* Inicialmente oculta a imagem */
+}
+
+/* Exibir o botão quando o usuário rolar para baixo */
+.show {
+    display: block; /* Exibe a imagem */
+}
+/* Botão de voltar ao topo do site - fim */
+
+/* Barra de Navegação - começo */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha os itens verticalmente */
+    background-color: #1C1C1C;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    justify-content: center; /* Centraliza os itens do container no centro */
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logotipo e Nome da Loja - começo */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Aumenta o espaço entre o logotipo e o texto */
+    position: absolute;
+    margin-right: 1050px; /* Ajusta o logotipo totalmente à esquerda */
+}
+
+.logotipo-barra-navegação-imagem {
+    width: 45px; /* Aumenta o tamanho do logotipo */
+}
+
+.logotipo-barra-navegação-texto {
+    width: 220px; /* Ajusta o tamanho do texto do logotipo */
+}
+/* Logotipo e Nome da Loja - fim */
+
+/* Links da barra de navegação - começo */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Permite que a lista ocupe o espaço restante */
+    justify-content: center; /* Centraliza os itens na barra */
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 25px; /* Aumenta o espaço entre os links */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+}
+
+.nav-links a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+}
+
+.dropdown-Contato {
+    position: relative;
+}
+
+.dropdown-Contato-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 1;
+}
+
+.dropdown-Contato-menu.show {
+    display: block; /* Torna visível */
+    opacity: 1; /* Aumenta a opacidade */
+}
+
+.dropdown-Contato-menu li {
+    padding: 7px 0px;
+}
+
+.dropdown-Contato-menu li a {
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    padding: 7px 20px;
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: white; /* Cor do texto */
+}
+
+.dropdown-Contato-menu li a:hover {
+    color: black;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.dropdown-Contato:hover .dropdown-Contato-menu {
+    display: block;
+}
+
+.dropdown-Contato > a:after {
+    content: " \25BC"; /* Seta indicando dropdown */
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+.whatsapp-icone-contato {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.instagram-icone-contato {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.facebook-icone-contato {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.dropdown-Produto {
+    position: relative;
+}
+
+.dropdown-Produto-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 1000;
+}
+
+.dropdown-Produto-menu.show {
+    display: block; /* Torna visível */
+    opacity: 1; /* Aumenta a opacidade */
+}
+
+.dropdown-Produto-menu li {
+    padding: 7px 20px;
+}
+
+.dropdown-Produto-menu li a:hover {
+    color: black;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.dropdown-Produto:hover .dropdown-Produto-menu {
+    display: block;
+}
+
+.dropdown-Produto > a:after {
+    content: " \25BC"; /* Seta indicando dropdown */
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+/* Links da barra de navegação - fim */
+
+/* Ícone de Pesquisa - começo */
+.search li {
+    list-style-type: none; /* Remove a bolinha padrão */
+    padding: 0; /* Remove o padding padrão, se necessário */
+    margin: 0; /* Remove a margem padrão, se necessário */
+}
+
+.search-container {
+    position: absolute;
+    display: flex;
+    align-items: center; /* Alinha a lupa e o campo de busca verticalmente */
+    margin-left: 20px; /* Move a lupa para a direita, usando o espaço restante */
+    top: 50%;
+    transform: translateY(-50%);
+    right: 95px; /* Posiciona a barra de pesquisa à direita */
+}
+
+.search-icon {
+    cursor: pointer;
+    width: 30px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Ajuste o tamanho da imagem conforme necessário */
+    margin-left: 10px; /* Espaçamento entre a imagem e o campo de entrada */
+    right: 20px; /* Distância do lado direito */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta a posição verticalmente para ficar centralizado */
+    margin-right: 10px; /* Espaço entre a lupa e o campo de entrada */
+    margin-top: 30px;
+}
+
+#searchInput {
+    width: 5; /* Começa com largura 0 */
+    border: none;
+    outline: none; /* Remove o contorno ao focar */
+    padding: 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 8px;
+    background-color: #333;
+    color: white; /* Cor do texto */
+    transition: width 0.5s ease, padding 0.5s ease; /* Transição suave */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a largura */
+}
+
+/* Estilo do placeholder */
+#searchInput::placeholder {
+    color: #fffcfc; /* Cor do texto do placeholder */
+    opacity: 1; /* Aumenta a opacidade do placeholder (pode ser ajustado) */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Classe ativa para a barra de pesquisa */
+#searchInput.active {
+    width: 1000px; /* Largura desejada quando ativo */
+    padding: 10px; /* Mantém o padding ao ativar */
+    opacity: 1; /* Fica visível ao ativar */
+}
+/* Ícone de Pesquisa - final */
+
+/* Estilos do Header e Main */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.about-container {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    max-width: 400px;
+    border-radius: 8px 0 0 8px;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+.about-text h2 {
+    margin-top: 0;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.p-1,
+.p-2 {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha */
+    color: #ffffff; /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+}
+
+/* Footer - início */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(28, 28, 28);
+    color: white;
+}
+
+.payment-methods img {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: #FFD700; /* Amarelo */
+    text-decoration: none;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+/* Footer - fim */
